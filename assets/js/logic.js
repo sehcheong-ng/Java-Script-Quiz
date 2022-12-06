@@ -26,4 +26,46 @@ startBtn.onclick = function() {
 
         timeleft -= 1;
     },1000);
+
+    for (var element of questionList)
+        questionTitle.innerText = element.question
+        choices.innerHTML = 
+        `
+        <ul>
+            <li><input id="btn1" type="button">${element.choice[0]}</li>
+            <li><input id="btn2" type="button">${element.choice[1]}</li>
+            <li><input id="btn3" type="button">${element.choice[2]}</li>
+            <li><input id="btn4" type="button">${element.choice[3]}</li>
+        </ul>`
+
+        for (i=1; i<5; i++) {
+            btn = `btn${i}`
+            console.log(btn)
+            var selection = document.getElementById(btn)
+            selection.onclick = function(){
+                console.log(selection.innerText)
+            }
+
+        }
+
+
+        // var selections = document.getElementsByTagName("input")
+        // console.log(selections)
+
+
+
+
 }
+
+
+// start-screen disappear
+// questions appears
+// start a for loop and counter
+// initiate score 
+// if cant complete before counter -> score = zero
+
+// question list
+// each q with 4 selections and 1 answer 
+// makes the btn cover whole block
+// if input btn != element.answer -> 'Wrong answer, try again, quick!'
+// Time - 10
